@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Enter Customer Data</title>
+</h:head>
+<h:body>
+	<h:outputStylesheet library="css" name="styles.css" />
+	<h:form id="carForm">
+		<h:messages errorClass="error" />
+		<h:panelGrid columns="2" columnClasses="rightAlign,leftAlign">
+			
+			<h:outputLabel for="name" value="Name:">
+			</h:outputLabel>
+			<h:inputText id="name" label="Name" value="#{car.name}" required="true">
+				<f:validateLength minimum="2" maximum="30">
+				</f:validateLength>
+			</h:inputText>
+			
+			<h:outputLabel for="year" value="Year:">
+			</h:outputLabel>
+			<h:inputText id="year" label="Year" value="#{car.year}" required="true">
+				<f:validateLongRange minimum="2" maximum="9999">
+				</f:validateLongRange>
+			</h:inputText>
+			
+			<h:outputLabel for="price" value="Price:">
+			</h:outputLabel>
+			<h:inputText id="price" label="Price" value="#{car.price}" required="true">
+			</h:inputText>
+			
+			<h:panelGroup></h:panelGroup>
+			<h:commandButton action="confirmation" value="Save">
+			</h:commandButton>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
+
