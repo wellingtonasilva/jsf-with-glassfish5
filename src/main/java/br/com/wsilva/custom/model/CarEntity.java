@@ -7,23 +7,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="car")
+@Table(name = "car")
+@NamedQueries({
+	@NamedQuery(name="findAllCar", query = "select c from CarEntity c")
+})
 public class CarEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="car_id")
+	@Column(name = "car_id")
 	private BigInteger id;
-	
-	@Column(name="car_name")
+
+	@Column(name = "car_name")
 	private String name;
-	
-	@Column(name="car_year")
+
+	@Column(name = "car_year")
 	private Integer year;
-	
-	@Column(name="car_price")
+
+	@Column(name = "car_price")
 	private Float price;
 
 	public BigInteger getId() {
