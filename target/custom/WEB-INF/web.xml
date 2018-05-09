@@ -16,7 +16,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>*.jsf</url-pattern>
+        <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
     <resource-ref>
         <res-ref-name>jsf/ProjectStage</res-ref-name>
@@ -28,6 +28,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/index.jsf</welcome-file>
+        <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>
